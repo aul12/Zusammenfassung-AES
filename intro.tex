@@ -1,0 +1,45 @@
+\chapter{Einführung}
+Ein eingettetes System ist in einen technischen Kontext oder Prozess eingebettet.
+
+Im wesentlichen kann ein eingebettetes System als ein Computer, der einen technischen Prozess steuert oder regelt, betrachtet werden.
+\todo{Grafik}
+
+\section{Architektur eines Eingebetteten Systems}
+\subsection{Eigenschaften eines Eingebetteten Systems}
+\begin{itemize}
+    \item Enge Verzahnung zwischen Hard- und Software
+    \item Strenge funktionale und zeitliche Randbedinungen
+    \item Zusätzlich zum Prozessor wird I/O Hard- und Software benötigt
+    \item Oftmals wird Anwendungsspezifische Hardware benötigt
+\end{itemize}
+$\Rightarrow$ Keine \glqq{}General-Purpose\grqq{} Lösung möglich
+
+Zusätzliche Probleme:
+\begin{itemize}
+    \item Wenig Platz
+    \item Nur beschränkte Energiekapazität
+    \item System darf nicht warm werden
+    \item Kostengünstig
+\end{itemize}
+
+\subsection{Zusätzliche Herausforderungen beim Entwurf}
+Die Entwicklung eines eingebetteten Systems ist kein reines Software-Problem, zusätzlich muss beachtet werden:
+\begin{itemize}
+    \item Auswahl eines Prozessors, Signalprozessors, Microcontrollers
+    \item Ein-/Ausgabe Konzept\&Komponenten
+        \begin{itemize}
+            \item Sensoren und Aktoren
+            \item Kommunikationsschnittstellen
+        \end{itemize}
+    \item Speichertechnologien und Anbindung
+    \item Systempartitionierung: Aufteilen der Funktionen der Komponente
+    \item Logik- und Schaltungsentwurf
+    \item Auswahl geeigneter Halbleitertechnologien
+    \item Entwicklung von Treibersoftware
+    \item Wahl eines Laufzeits-/Betriebssystems
+    \item Die eigentliche Softwareentwicklung
+\end{itemize}
+$\Rightarrow$ Aufteilung des Entwurfs auf mehrer Entwurfsebene
+
+\subsection{Entwurfsebenen}
+

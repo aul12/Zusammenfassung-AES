@@ -17,7 +17,8 @@
 \usepackage{colortbl}
 \usepackage{xstring}
 \usepackage{circuitikz}
-\usepackage{listings} % needed for the inclusion of source code
+\usepackage{listings}
+\usepackage{todonotes}
 \usepackage[final]{pdfpages}
 
 \usetikzlibrary{calc,shapes.multipart,chains,arrows}
@@ -32,6 +33,6 @@
     \pagebreak
     \tableofcontents
     \pagebreak
-    \chapter{Einführung}
-    Ein eingettetes System ist in einen technischen Kontext oder Prozess eingebettet.
+
+    \input{intro.tex}
 \end{document}

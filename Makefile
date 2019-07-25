@@ -3,7 +3,7 @@ VIEWER=evince
 
 all: main.pdf
 
-main.pdf: main.tex
+main.pdf: *.tex
 	$(RUBBER) -d main.tex
 
 show: all
