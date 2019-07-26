@@ -57,7 +57,7 @@ $\Rightarrow$ Aufteilung des Entwurfs auf mehrer Entwurfsebene
     \caption{Entwurfsebenen}
 \end{table}
 
-\todo{Graphik}
+\todo{Grafik}
 
 \section{Hardwarespezifikationssprachen}
 \begin{itemize}
@@ -219,3 +219,65 @@ Aufgaben des Simulators:
 \end{itemize}
 
 \subsection{Signale Treiben}
+Signale werden durch eine Event-Queue repräsentiert, das heißt nicht die Signale selber, sondern nur Änderungen der Signale (z.b. Flanken) werden gespeichert.
+Die Event-Queue besteht aus \glqq{}Transaktionen\grqq{} jede Transaktion ist ein Tuple aus der Zeit zu der die Änderung auftritt, und der Änderung selber.
+
+Zum Beispiel:
+\begin{lstlisting}[style=vhdl]
+    y <= '0' after 0ns, '1' after 10ns, '0' after 20n;
+\end{lstlisting}
+Wird als Event-Queue so dargestellt:
+\begin{equation*}
+    \{<0,'0'>, <10, '1'>, <20, '0'>\}
+\end{equation*}
+
+\subsection{Rückkopplungen auflösen}
+Transaktionen können echt parallel stattfinden (Ereignisse treten asynchron und ggf. gleichzeitig auf).
+$\Rightarrow$ Es kann zu Konflikten kommen (\glqq{}Henne-Ei-Problem\grqq{}), z.B. bei einem zero-delay RS-Latch:
+\begin{lstlisting}[style=vhdl,numbers=left,stepnumber=1]
+    x <= not (y and lset);
+    y <= not (x and reset);
+\end{lstlisting}
+Lösung: Tagged-Event-Queue bzw. Delta-Delay: 
+Jeder Zeitpunkt wird um eine \glqq{}zweiten Dimension\grqq{} ergänzt, 
+Events die direkt nacheinander (z.B. als direkte Folge) auftreten (mit einem Delta-Delay) werden entlang dieser zweiten Dimension geordnet.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|cccc|c}
+        \toprule
+        t & lset & x & y & reset & Zeile \\
+        \midrule
+        $0$ & $\downarrow$ & 0 & 1 & 1 & 1 \\
+        $0 + \Delta$ & 0 & $\uparrow$ & 1 & 1 & 2\\
+        $0 + 2 \Delta$ & 0 & 1 & $\downarrow$ & 1 & 1\\
+        $0 + 3 \Delta$ & 0 & 1 & 0 & 1 & \checkmark \\
+        \midrule 
+        $10$ & $\uparrow$ & 1 & 0 & 1 & 1 \\
+        $10 + \Delta$ & 1 & 1 & 0 & 1 & \checkmark \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tagged-Event-Queue für den zero-delay RS-Latch}
+\end{table}
+
+\subsection{Verzögerungen modellieren}
+Durch Schaltzeiten, Kapazitäten, Laufzeiten etc. kommt es in echten Systemen zu Verzögerungen der Signale. Diese müssen daher auch in VHDL modelliert werden können.
+Dafür wird zwischen zwei Arten unterschieden:
+\begin{itemize}
+    \item Langsames Ansprechverhalten, das heißt kurze Pulse werden nicht durchgelassen
+    \item Verzögerung der Signale
+\end{itemize}
+Beispiel (Inverter):
+\begin{lstlisting}[style=vhdl]
+    out <= reject 10 ns inertial not in after 30ns;
+\end{lstlisting}
+Die Verzögerungen werden in VHDL durch \lstinline[style=vhdl]{reject} für langsames Ansprechverhalten (hier muss der Puls mindestens 10ns dauern) 
+und \lstinline[style=vhdl]{after} für Verzögerungen (hier 30ns) modelliert.
+
+Für reine Laufzeitverzögerungen kann in VHDL auch \lstinline[style=vhdl]{transport} genutzt werden, folgende Befehle sind äquivalent:
+\begin{lstlisting}[style=vhdl]
+    out <= transport in after 30ns;
+    out <= reject 0ns inertial in after 30ns;
+\end{lstlisting}
+
+\todo{wait\_until und generic}
