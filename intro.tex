@@ -149,8 +149,8 @@ alternativ geht auch:
         f <= (a and sel) or (b and (not sel));
     end DATAFLOW_MUX;
 \end{lstlisting}
-eine weitere Option:
 
+eine weitere Option:
 \begin{lstlisting}[style=vhdl]
     architecture DATAFLOW_MUX of MUX is
     signal nsel, f1, f2 : Bit;
@@ -162,3 +162,60 @@ eine weitere Option:
     end DATAFLOW_MUX;
 \end{lstlisting}
 Alternativ: Mit Variablen
+\todo{Laut Skript geht das so nicht, sollte aber eigentlich schon?}
+
+\subsubsection{Als Structure-Block}
+\begin{lstlisting}[style=vhdl]
+    architecture STRUCTURE of MUX is
+        component NOT
+            port(i: in Bit; o: out Bit);
+        end component;
+        component AND
+            port(i1, i2: in Bit; o: out Bit);
+        end component;
+        component OR
+            port(i1, i2: in Bit; o: out Bit);
+        end component;
+        signal nsel, f1, f2: Bit;
+    begin
+        g1: AND port map(a, sel, f1);
+        g2: AND port map(b, nsel, f2);
+        g3: OR port map(f1, f2, f);
+        g4: NOT port map(sel, nsel);
+    end STRUCTURE;
+\end{lstlisting}
+
+\section{Configuration}
+Rekursive die Architektur für jede Entity auswählen:
+\begin{lstlisting}[style=vhdl]
+    configuration STRUCTURE_MUX of MUX is
+        for STRUCURE
+            for g1,g2: AND use entity MYAND(BEHAVIOUR_AND)
+                ...
+            end for;
+        end for;
+    end STRUCTURE_MUX;
+\end{lstlisting}
+\todo{Was genau passiert da jetzt?}
+
+Dann muss die oben genutze Entity und Architektur natürlich noch definiert werden:
+\begin{lstlisting}[style=vhdl]
+    entity MYAND is
+        port(i1, i2: in Bit; 
+            o: out Bit);
+    end MYAND;
+
+    architecture BEHAVIOUR_MYAND is
+        o <= i1 and i2;
+    end BEHAVIOUR_MYAND;
+\end{lstlisting}
+
+\section{VHDL-Simulationssemantik}
+Aufgaben des Simulators:
+\begin{itemize}
+    \item Signal treiben/propagieren
+    \item Rückkopplungen auflösen
+    \item Verzögerungen modellieren
+\end{itemize}
+
+\subsection{Signale Treiben}
