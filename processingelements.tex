@@ -1,1 +1,38 @@
 \chapter{Processing Elements}
+\section{Instruction Set Processor nach von Neumann (Princeton-Architektur)}
+\todo{Grafik}
+\subsection{Befehlszyklus}
+\begin{enumerate}
+    \item Befehl holen (fetch)
+    \item Befehl dekodieren (decode)
+    \item Operanden holen (load)
+    \item Befehl ausführen (execute)
+    \item Daten speichern (write back)
+\end{enumerate}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+        \toprule
+        Pro & Contra \\
+        \midrule
+        Analyse einfach & Auslastung gering \\
+        Speicher flexibel benutzbar & von-Neumann Flaschenhals (Daten und Befehle über den selben Bus)\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Harvard-Architektur}
+\todo{Grafik}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{.5\textwidth}p{.5\textwidth}}
+        \toprule
+        Pro & Contra \\
+        \midrule
+        Auslastung & Fragmentierter Speicher \\
+        Kein Flaschenhals & Analyse schwierig \\
+        Schnellere Abarbeitung & Schwierig bei Datenabhängigkeiten \\
+        \bottomrule
+    \end{tabular}
+\end{table}
