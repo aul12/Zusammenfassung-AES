@@ -115,13 +115,16 @@ Zusammenschalten weiterer Design-Entitys:
 \end{itemize}
 
 \subsection{Beispiel: Multiplexer}
-\subsubsection{Als Process-Block}
+Entity-Deklaration:
 \begin{lstlisting}[style=vhdl]
     entity MUX is
         port(a,b,sel: in Bit;
             f: out Bit);
     end MUX;
+\end{lstlisting}
 
+\subsubsection{Als Process-Block}
+\begin{lstlisting}[style=vhdl]
     architecture BEHAVIOUR_MUX of MUX is
     begin
         process(a,b,sel)
@@ -133,3 +136,29 @@ Zusammenschalten weiterer Design-Entitys:
 \end{lstlisting}
 
 \subsubsection{Als Dataflow-Block}
+\begin{lstlisting}[style=vhdl]
+    architecture DATAFLOW_MUX of MUX is
+    begin
+        f <= a when sel = '1' else b;
+    end DATAFLOW_MUX;
+\end{lstlisting}
+alternativ geht auch:
+\begin{lstlisting}[style=vhdl]
+    architecture DATAFLOW_MUX of MUX is
+    begin
+        f <= (a and sel) or (b and (not sel));
+    end DATAFLOW_MUX;
+\end{lstlisting}
+eine weitere Option:
+
+\begin{lstlisting}[style=vhdl]
+    architecture DATAFLOW_MUX of MUX is
+    signal nsel, f1, f2 : Bit;
+    begin
+        nsel <= not sel;
+        f1 <= a and sel;
+        f2 <= b and nsel;
+        f <= f1 or f2;
+    end DATAFLOW_MUX;
+\end{lstlisting}
+Alternativ: Mit Variablen
