@@ -42,4 +42,94 @@ Die Entwicklung eines eingebetteten Systems ist kein reines Software-Problem, zu
 $\Rightarrow$ Aufteilung des Entwurfs auf mehrer Entwurfsebene
 
 \subsection{Entwurfsebenen}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{p{.25\textwidth}p{.25\textwidth}p{.25\textwidth}p{.25\textwidth}}
+        \toprule
+        Verhalten & Syntheseschritt & Entscheidungen & Test \\
+        \midrule
+        System Specification & Systemsynthese & HW/SW/OS & Modelsimulator / Checker \\
+        Behavioural Specification & Verhalten / Architektursynthese & Verarbeitungs-einheiten & HW/SW-Simulation \\
+        Register-Transfer-Specification & RT-Synthese & Register, Addierer, Mux & HDL-Simulation \\
+        Logic-Specification & Logiksynthese & Gatter & Gate-Simulation \\
+        \bottomrule
+    \end{tabular}
+    \caption{Entwurfsebenen}
+\end{table}
 
+\todo{Graphik}
+
+\section{Hardwarespezifikationssprachen}
+\begin{itemize}
+    \item Verilog
+    \item VHDL (Very High Speed Integrated Circuit Description Language)
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \filldraw [draw=black,fill=gray!10] (0,0) rectangle (13,3);
+        \node at (1.2,2.7) (de){Design Entity};
+        \draw (0,2) -- (13,2) node[above,pos=.5] {Interface};
+        \filldraw [draw=black,fill=gray!40] (1,0.5) rectangle (4,1.5);
+        \filldraw [draw=black,fill=gray!40] (5,0.5) rectangle (8,1.5);
+        \filldraw [draw=black,fill=gray!40] (9,0.5) rectangle (12,1.5);
+        \node[below right] at (1,1.5) (){Process-Block};
+        \node[below right] at (5,1.5) (){Dataflow-Block};
+        \node[below right] at (9,1.5) (){Structure-Block};
+    \end{tikzpicture}
+    \caption{Aufbau einer Design-Entity}
+\end{figure}
+
+\paragraph{Process-Block}
+Sequentiell abgearbeitete Logik:
+\begin{lstlisting}[style=vhdl]
+    process(clk)
+    begin
+        ...
+    end
+\end{lstlisting}
+
+\paragraph{Dataflow-Block}
+Konkurrent abgearbeitete Logik:
+\begin{lstlisting}[style=vhdl]
+    begin
+        ...
+    end
+\end{lstlisting}
+
+\paragraph{Structure-Block}
+Zusammenschalten weiterer Design-Entitys:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{structure.pdf}
+    \caption{Structure-Block}
+\end{figure}
+
+\subsection{Aufbau von VHDL-Beschreibungen}
+\begin{itemize}
+    \item \lstinline[style=vhdl]{use}: Import von Bibliotheken
+    \item \lstinline[style=vhdl]{entity}: Schnittstellenbeschreibung
+    \item \lstinline[style=vhdl]{architecture}: Implementierung der Entity
+    \item \lstinline[style=vhdl]{configuration}: \lstinline[style=vhdl]{architecture} zu \lstinline[style=vhdl]{entity} auswählen
+\end{itemize}
+
+\subsection{Beispiel: Multiplexer}
+\subsubsection{Als Process-Block}
+\begin{lstlisting}[style=vhdl]
+    entity MUX is
+        port(a,b,sel: in Bit;
+            f: out Bit);
+    end MUX;
+
+    architecture BEHAVIOUR_MUX of MUX is
+    begin
+        process(a,b,sel)
+        begin
+            if sel = '1' then f <= a;
+            else f <= b;
+        end process;
+    end BEHAVIOUR_MUX;
+\end{lstlisting}
+
+\subsubsection{Als Dataflow-Block}

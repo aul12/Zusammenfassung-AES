@@ -1,0 +1,12 @@
+digraph G {
+    RegA {
+        label = "Register"
+    }
+    RegB {
+        label = "Register"
+    }
+    
+    RegA -> Alu
+    RegB -> Alu
+    Alu -> Bus
+}

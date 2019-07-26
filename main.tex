@@ -20,6 +20,25 @@
 \usepackage{listings}
 \usepackage{todonotes}
 \usepackage[final]{pdfpages}
+\usepackage{listings}
+
+\lstdefinelanguage{VHDL}{
+   morekeywords={
+     library,use,all,entity,is,port,in,out,end,architecture,of,
+     begin,and,process,configuration,if,else,then,for,while
+   },
+   morecomment=[l]--
+}
+
+\usepackage{xcolor}
+\colorlet{keyword}{blue!100!black!80}
+\colorlet{comment}{green!90!black!90}
+\lstdefinestyle{vhdl}{
+   language     = VHDL,
+   basicstyle   = \ttfamily,
+   keywordstyle = \color{keyword}\bfseries,
+   commentstyle = \color{comment}
+}
 
 \usetikzlibrary{calc,shapes.multipart,chains,arrows}
 
