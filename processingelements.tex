@@ -63,3 +63,8 @@ Für die Synchronisation ist ein \glqq{}Arbiter\grqq{} (Richter) sowie ein Bus-C
 Direkte Verbindung zwischen allen PEs die kommunizieren müssen, Arbitrierung ist nicht notwendig, mehrere PEs können gleichzeitig kommunizieren. 
 Es ist wieder ein Controller für jede Verbindung von nöten, zudem muss dieser eventuell Daten puffern. 
 Bei $n$ PEs sind im Worstcase $\frac{(n-1)\cdot n}{2} \in  \mathcal{O}(n^2)$ Verbindung notwendig.
+
+\subsection{Tiled-Architecture}
+Bei einer Tiled-Architecture oder Network-on-a-Chip (NOC) werden jeweils wenige PEs über eine gemeinsame Resource verbunden. 
+Diese Gruppen an PEs werden dann über ein Gitter aus Leitungen verbunden.
+\todo{Grafik}
