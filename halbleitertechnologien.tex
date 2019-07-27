@@ -146,3 +146,71 @@ Semi-Custom-Komponenten sind deutlich größer als Full-Custom-Komponenten.
 Ziel: Logikelemente selbst verbinden $\Rightarrow$ Schaltelemente
 
 Hinweis: Auch Logikelemente selber können konfigurierbar sein.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[->] (0,1) -- (0,0.5) node[below]{Microprozessor};
+        \draw[->] (0,2) -- (0,1.5) node[below]{OP-Code};
+        \draw[->] (0,3) -- (0,2.5) node[below]{Assembler+Linker};
+        \draw[->] (0,4) -- (0,3.5) node[below]{Assemblerbefehle};
+        \node[above] at(0,4) (){Compiler};
+        \draw[->] (4,1) -- (4,0.5) node[below]{ASIC};
+        \draw[->] (4,2) -- (4,1.5) node[below]{$\cdots$};
+        \draw[->] (4,3) -- (4,2.5) node[below]{Logikschaltung};
+        \draw[->] (4,4) -- (4,3.5) node[below]{Logiksynthese};
+        \draw[->] (4,5) -- (4,4.5) node[below]{RTL-Beschreibung};
+        \node[above] at(4,5) (){Architektursynthese};
+    \end{tikzpicture}
+    \caption{Vergleich von Hardwarebeschreibung und \glqq{}normaler\grqq{} Software}
+\end{figure}
+
+\subsection{Programmable Logic Devices (PLDs)}
+\begin{itemize}
+    \item 3 Klassen:
+        \begin{itemize}
+            \item SPLD (Simple Programmable Logic Device)
+            \item CPLD (Complex Programmable Logic Device)
+            \item FPGA (Field Programmable Gate Array)
+        \end{itemize}
+    \item 2 Ebenen: \todo{Was  heißt das jetzt?}
+        \begin{itemize}
+            \item Funktionale Ebene (Logistrukturen)
+            \item Konfigurationsebenen
+        \end{itemize}
+    \item Verbindungen werden über eine SRAM-Zelle geschaltet
+        \begin{figure}[H]
+            \centering
+            \begin{circuitikz}
+                \draw (1,3) node[nmos,rotate=-90] (left){};
+                \draw (3,4) node[pmos,rotate=180] (lp){};
+                \draw (6,4) node[pmos,rotate=0] (rp){};
+                \draw (3,2) node[nmos,rotate=180] (ln){};
+                \draw (6,2) node[nmos,rotate=0] (rn){};
+                \draw (9,1) node[nmos,rotate=-45] (right){};
+                \draw (left.C) |- (3,3);
+                \draw (lp.E) |- (ln.E);
+                \draw (rp.C) |- (rn.C);
+                \draw (lp.C) |- (rp.E);
+                \draw (ln.C) |- (rn.E);
+                \draw (3,3) to[short,-*] (3,3);
+                \draw (lp.B) |- (ln.B);
+                \draw (rp.B) |- (rn.B);
+                \draw (3,3.3) to[short,*-*] (5,3.3);
+                \draw (4,2.7) to[short,*-*] (6,2.7);
+                \draw (6,3) to[short,*-] (6,3);
+                \draw (6,3) -| (right.B);
+                \draw (0,0) -- (0,5);
+                \draw (0,3) to[short,*-] (left.E);
+                \draw (4.5,1.275) to[short,*-] (4.5,1) node[rground]{};
+                \draw (4.5,4.775) to[short,*-] (4.5,5) node[vcc]{};
+                \draw (10,-1) -- (10,5);
+                \draw (7,0) -- (11,0);
+                \draw (right.E) -| (8,0);
+                \draw (right.C) |- (10,2);
+                \draw (8,0) to[short,-*] (8,0);
+                \draw (10,2) to[short,-*] (10,2);
+            \end{circuitikz}
+            \caption{SRAM-Zelle in einem PLD}
+        \end{figure}
+\end{itemize}
