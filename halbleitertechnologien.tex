@@ -16,6 +16,12 @@ Jedes PE, egal ob ISP, ASIP oder ASP muss gefertigt werden. Hierfür muss sich f
     \caption{Optionen für die fertigung von Halbleiterkomponenten}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ic.pdf}
+    \caption{Überblick über ICs}
+\end{figure}
+
 \section{Full-Custom-Logic Fabric}
 Sehr teuer, dafür aber maximale Performance. 
 Lohnt sich im Normalfall nur für sehr große Stückzahlen.
@@ -26,11 +32,13 @@ Beispiele für Full-Custom gefertigte Komponenten:
     \item ASIPs (z.b. Basisbandprozessoren)
     \item Microcontroller
 \end{itemize}
+
 Üblicherweise werden Full-Custom-Komponenten in \glqq{}complementary metal-oxide-semiconductor\grqq{} (CMOS) Technik gefertigt.
 
 \section{Semi-Custom (Gate-Array)}
 Ein Gate-Array besteht aus vielen, nicht verbundenen, Transistorzellen, sogenannten Basismakros. 
 Vom Anwender kann sowohl die Funktion jeder Logikzelle (NAND oder NOR) sowie die Verbindungen zwischen den Logikzellen bestimmt werden.
+Semi-Custom-Komponenten sind deutlich größer als Full-Custom-Komponenten.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -134,3 +142,7 @@ Vom Anwender kann sowohl die Funktion jeder Logikzelle (NAND oder NOR) sowie die
     \caption{Aufbau und Nutzung der Transistorzellen/Basismakros}
 \end{figure}
 
+\section{Programmierbare Schaltungen (Programmable Gate Fabric)}
+Ziel: Logikelemente selbst verbinden $\Rightarrow$ Schaltelemente
+
+Hinweis: Auch Logikelemente selber können konfigurierbar sein.

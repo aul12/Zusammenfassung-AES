@@ -1,10 +1,10 @@
 digraph G {
-    RegA {
+    RegA [
         label = "Register"
-    }
-    RegB {
+    ]
+    RegB [
         label = "Register"
-    }
+    ]
     
     RegA -> Alu
     RegB -> Alu

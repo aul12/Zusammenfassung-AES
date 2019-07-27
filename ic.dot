@@ -1,0 +1,58 @@
+digraph {
+    node [
+        shape=plaintext
+    ]
+    rankdir=LR
+
+    AppSpez [
+        label = "Anwendungsspezifische Bauelemente"
+    ]
+
+    Makro [
+        label = "ICs mit Makros"
+    ]
+
+    FreierEntwurf [
+        label = "Freier Entwurf"
+    ]
+
+    EACtrl [
+        label = "E/A-Controller"
+    ]
+
+    FullCustom [
+        label = "Full custom"
+    ]
+
+    IC -> Standardbauelemente
+    IC -> AppSpez
+
+    Standardbauelemente -> Festverdrahtet
+    Standardbauelemente -> Maschinenprogrammierbar
+
+
+    AppSpez -> Anwender
+    AppSpez -> Makro
+    AppSpez -> FreierEntwurf
+
+
+    Festverdrahtet->Prozessor
+    Festverdrahtet->RAM
+    Festverdrahtet->Flash
+    Festverdrahtet->EACtrl
+    Festverdrahtet->OPV
+
+    Maschinenprogrammierbar -> Microcontroller
+    Maschinenprogrammierbar -> ROM
+    Maschinenprogrammierbar -> EEPROM
+
+    Anwender -> PLD
+    Anwender -> GAL
+    Anwender -> FPGA
+
+    Makro -> Gatearrays
+    Makro -> Standardzellen
+
+
+    FreierEntwurf -> FullCustom
+}
