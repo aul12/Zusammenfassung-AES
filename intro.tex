@@ -1,8 +1,22 @@
 \chapter{Einführung}
 Ein eingettetes System ist in einen technischen Kontext oder Prozess eingebettet.
 
-Im wesentlichen kann ein eingebettetes System als ein Computer, der einen technischen Prozess steuert oder regelt, betrachtet werden.
-\todo{Grafik}
+Im wesentlichen kann ein eingebettetes System als einen Computer, der einen technischen Prozess steuert oder regelt, betrachtet werden.
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw (-1,0) to[twoport,t=\scriptsize{Rechner}] (1,0);
+        \draw (-3,0) to[adc] (-1,0);
+        \draw (1,0) to[dac] (3,0);
+        \draw (-5,0) to[twoport,t=\scriptsize{Sensor}] (-3,0);
+        \draw (3,0) to[twoport,t=\scriptsize{Aktor}] (5,0);
+        \filldraw [draw=black,fill=white] (-3,1) rectangle (3,2);
+        \node at (0,1.5) {Technischner Kontext/Prozess};
+        \draw (-5,0) |- (-3,1.5);
+        \draw (5,0) |- (3,1.5);
+    \end{tikzpicture}
+    \caption{Aufbau eines Eingebetteten Systems}
+\end{figure}
 
 \section{Architektur eines Eingebetteten Systems}
 \subsection{Eigenschaften eines Eingebetteten Systems}

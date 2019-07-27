@@ -213,4 +213,31 @@ Hinweis: Auch Logikelemente selber können konfigurierbar sein.
             \end{circuitikz}
             \caption{SRAM-Zelle in einem PLD}
         \end{figure}
+    \item Problem mit SRAM: Speicher ist flüchtig
+    \item Alternativen: EPROM, EEPROM, Flash \todo{Bild Flash}
+    \item Einmalige Programmierung (Anti-Fuse) \todo{Grafik}
 \end{itemize}
+
+\subsubsection{SPLDs}
+Mögliche Formen von SPLDs sind:
+\begin{itemize}
+    \item PLA: Und und Oder Matrix, beide Programmierbar
+    \item PROM: Und festverdrahtet, Oder Programmierbar (nicht jede Boolsche-Funktion abbildbar)
+    \item PAL: Und Programmierbar, Oder fix
+\end{itemize}
+\todo{Grafik}
+
+\subsubsection{CPLDs}
+Viele Funktionsblöcke, dazwischen \glqq{}Fast Connect Switch Matrix\grqq{}.
+\todo{Grafik}
+
+\subsubsection{FPGAs}
+Beliebige Logikfunktionen darstellbar durch Look-Up-Table (LUT).
+\todo{Grafik}
+\paragraph{Slice (kleinster Baustein)}
+Ein Slice besteht aus zwei LUTs, zugehöriger Carry-Logik um Slices effizienter nacheinander zu schalten, sowie zwei Flip-Flops. 
+\todo{Grafik}
+
+\paragraph{Makro Cell (bei Xilinx: Configurable Logic Block, CLB)}
+Eine Makro Cell wird über ein Bus-Netzwerk (vgl. Tiled-Architecture) angeschlossen.
+\todo{Grafik}
