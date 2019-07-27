@@ -1,5 +1,6 @@
 \chapter{Processing Elements}
-\section{Instruction Set Processor nach von Neumann (Princeton-Architektur)}
+\section{Instruction Set Processor (ISP)}
+\subsection{von-Neumann-/Princeton-Architektur}
 \todo{Grafik}
 \subsection{Befehlszyklus}
 \begin{enumerate}
@@ -22,7 +23,7 @@
     \end{tabular}
 \end{table}
 
-\section{Harvard-Architektur}
+\subsection{Harvard-Architektur}
 \todo{Grafik}
 \begin{table}[H]
     \centering
@@ -36,3 +37,29 @@
         \bottomrule
     \end{tabular}
 \end{table}
+
+\section{Application Specific Instruction Set Processor (ASIP)}
+Regulärer ISP wird durch zusätzliche Instruktionen (und damit auch Hardware) für ein bestimmtes Einsatzgebiet optimiert, 
+z.B. durch zusätzlich \glqq{}Multiply-Accumulate\grqq{}-Einheit oder auch komplette FFT-Operationen.
+Beispiel: DSP (Digital Signal Processpr).
+\todo{Grafik}
+
+\section{Application Specific Processor}
+Nicht mehr programmierbar, Prozessor kann nur wenige vorkonfigurierte Befehle ausführen, Steuerung erfolgt über eine spezielle Logik, oftmals in Form einer
+State-Machine.
+\todo{Grafik}
+
+\section{Beispiel: Aufbau eines Schnurlosen DECT-Telefons}
+\todo{Grafik}
+Oftmals wird ein ISP mit zugehöriger RF-Hardware auf einem Chip-Integriert (z.B. in Mobiltelefonen), dann spricht man von einem Sytem-on-a-Chip (SoC).
+
+\section{Wie kommunizieren PEs in heterogenen Systemen?}
+\subsection{Gemeinsame Ressourcen (Speicherkopplung)}
+\todo{Grafik}
+Alle PEs können über einen Bus auf eine gemeinsame Ressource (für gewöhnlich Speicher) zugreifen. 
+Für die Synchronisation ist ein \glqq{}Arbiter\grqq{} (Richter) sowie ein Bus-Controller in jedem PE notwendig.
+
+\subsection{Direkte Verbindung}
+Direkte Verbindung zwischen allen PEs die kommunizieren müssen, Arbitrierung ist nicht notwendig, mehrere PEs können gleichzeitig kommunizieren. 
+Es ist wieder ein Controller für jede Verbindung von nöten, zudem muss dieser eventuell Daten puffern. 
+Bei $n$ PEs sind im Worstcase $\frac{(n-1)\cdot n}{2} \in  \mathcal{O}(n^2)$ Verbindung notwendig.
