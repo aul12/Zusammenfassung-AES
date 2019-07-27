@@ -127,12 +127,60 @@
 Regulärer ISP wird durch zusätzliche Instruktionen (und damit auch Hardware) für ein bestimmtes Einsatzgebiet optimiert, 
 z.B. durch zusätzlich \glqq{}Multiply-Accumulate\grqq{}-Einheit oder auch komplette FFT-Operationen.
 Beispiel: DSP (Digital Signal Processpr).
-\todo{Grafik}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \filldraw [draw=black,fill=gray!10] (-1,7) rectangle (10,15);
+        \filldraw [draw=black,fill=gray!40] (0,8) rectangle (4,14);
+        \filldraw [draw=black,fill=gray!40] (5,8) rectangle (9,14);
+        \filldraw [draw=black,fill=gray!70] (0.5,9) rectangle (3.5,13);
+        \filldraw [draw=black,fill=gray!70] (5.5,12) rectangle (8.5,13);
+        \filldraw [draw=black,fill=gray!70] (5.5,10.5) rectangle (8.5,11.5);
+        \filldraw [draw=black,fill=gray!70] (5.5,9) rectangle (8.5,10);
+        \draw (-1,15) node[above right] {ASIP};
+        \draw (0,14) node[above right] {Steuerwerk};
+        \draw (5,14) node[above right] {Rechenwerk};
+        \draw (0.5,13) node[above right] {Kontrollpfad};
+        \draw (0.5,13) node[below right] {Zustands-};
+        \draw (0.5,12.5) node[below right] {Register};
+        \draw (5.5,13) node[above right] {Datenpfad};
+        \draw (5.5,13) node[below right] {ALU};
+        \draw (5.5,11.5) node[below right] {MAC-Einheit};
+        \draw (5.5,10) node[below right] {Register};
+        \draw [->] (4,12) -- (5,12);
+        \draw [->] (5,10) -- (4,10);
+    \end{tikzpicture}
+    \caption{Aufbau eines ASIP mit zusätzlicher MAC-Einheit}
+\end{figure}
 
 \section{Application Specific Processor}
 Nicht mehr programmierbar, Prozessor kann nur wenige vorkonfigurierte Befehle ausführen, Steuerung erfolgt über eine spezielle Logik, oftmals in Form einer
 State-Machine.
-\todo{Grafik}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \filldraw [draw=black,fill=gray!10] (-1,7) rectangle (10,15);
+        \filldraw [draw=black,fill=gray!40] (0,8) rectangle (4,14);
+        \filldraw [draw=black,fill=gray!40] (5,8) rectangle (9,14);
+        \filldraw [draw=black,fill=gray!70] (0.5,9) rectangle (3.5,13);
+        \filldraw [draw=black,fill=gray!70] (5.5,12) rectangle (8.5,13);
+        \filldraw [draw=black,fill=gray!70] (5.5,10.5) rectangle (8.5,11.5);
+        \filldraw [draw=black,fill=gray!70] (5.5,9) rectangle (8.5,10);
+        \draw (-1,15) node[above right] {ASP};
+        \draw (0,14) node[above right] {Steuerwerk};
+        \draw (5,14) node[above right] {Rechenwerk};
+        \draw (0.5,13) node[above right] {Kontrollpfad};
+        \draw (0.5,13) node[below right] {Zustands-};
+        \draw (0.5,12.5) node[below right] {Maschine};
+        \draw (5.5,13) node[above right] {Datenpfad};
+        \draw (5.5,13) node[below right] {FFT};
+        \draw (5.5,11.5) node[below right] {+};
+        \draw (5.5,10) node[below right] {-};
+        \draw [->] (4,12) -- (5,12);
+        \draw [->] (5,10) -- (4,10);
+    \end{tikzpicture}
+    \caption{Aufbau eines ASP, der nur FFT,+ und - Operationen durchführt}
+\end{figure}
 
 \section{Beispiel: Aufbau eines Schnurlosen DECT-Telefons}
 \todo{Grafik}
