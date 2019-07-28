@@ -142,7 +142,7 @@ Zudem kann durch dieses Verfahren auch die Referenzspannung kalibriert werden (m
 \todo{Blockschaltbild}
 \todo{Timing}
 
-\subsubsection{Spannungsfrequenzumsetzer}
+\subsection{Spannungsfrequenzumsetzer}
 Idee: Integrator wird mit Eingangsspannung bis zu gewisser Referenzspannung geladen. Dann wird ein Puls gesendet und der Integrator geleert.
 Dadurch entsteht eine Sägezahnwelle am Integrator und eine Reihe von Pulsen mit der Frequenz proportional zur Eingangsspannung am Ausgang.
 Für die Spannung gilt dann also ($N$ ist die Anzahl an Peaks, $f$ die Frequenz der Peaks, $t_m$ die Zeit über die gemessen wird, $U_m$ die Eingangsspannung,
@@ -154,6 +154,7 @@ Dadurch wird automatisch über die gemessene Spannung gemittelt, die Messung dau
 \todo{Blockschaltbild}
 \todo{Timing}
 
+\subsection{Stufenumsetzer}
 \subsubsection{Schablonenumsetzer}
 Für einen $n$-Bit Umsetzer werden $2^n -1$ Vergleichsspannungen generiert.
 Die Messpannung wird mit allen diesen Spannung verglichen, es entsteht ein $2^n-1$-Bit-Signal bei dem alle Bits bis zu der anliegenden Spannung gesetzt sind,
@@ -185,4 +186,21 @@ Nachteil: Anzahl der Komperatoren skaliert exponentiell.
 Idee: Referenzspannung wird mit DAC erzeugt und mit Messpannung verglichen, durch Bisektion wird die Messpannung bestimmt.
 
 Nachteil: Braucht Zeit und DAC.
+\todo{Blockschaltbild}
+
+\section{Digital-Analog-Umsetzer}
+\subsection{Parallelverfahren}
+Siehe Schablonenumsetzer, $2^n -1$ mögliche Spannungen, die relevante Spannung wird an den Ausgang geschaltet.
+
+Nachteil: skaliert ebenfalls mit exponentiell mit der Auflösung.
+\todo{Blockschaltbild}
+
+\subsection{Wägeverfahren}
+Idee: Spannungen für jede Stelle der Binärzahl ($\frac{1}{2} U_\text{ref}$, $\frac{1}{4} U_\text{ref}$,...), die je nach Bitzugeschaltet wird.
+
+Vorteil: Schnell, skaliert linear mit der Auflösung. Nachteil: Widerstände stark unterschiedlicher Größen benötigt.
+\todo{Blockschaltbild}
+
+\subsubsection{Leiternetz}
+Optimierung des Wägeverfahrens, nur Widerstände zweier größen benötigt.
 \todo{Blockschaltbild}
