@@ -1,0 +1,48 @@
+digraph {
+    node [
+        shape=plaintext
+    ]
+    rankdir=LR
+
+    SchedulingVerfahren [
+        label = "Scheduling Verfahren"
+    ]
+
+    NichtPraemptivL [
+        label = "Nicht präemptiv"
+    ]
+
+    NichtPraemptivR [
+        label = "Nicht präemptiv"
+    ]
+
+    PraemptivL [
+        label = "Präemptiv"
+    ]
+
+    PraemptivR [
+        label = "Präemptiv"
+    ]
+
+    KeinePrio [
+        label = "Keine Prioritäten"
+    ]
+
+    StatPrio [
+        label = "Statische Prioritäten"
+    ]
+
+    DynPrio [
+        label = "Dynamische Prioritäten"
+    ]
+
+    SchedulingVerfahren -> Statisch
+    SchedulingVerfahren -> Dynamisch
+    Statisch -> NichtPraemptivL
+    Statisch -> PraemptivL
+    Dynamisch -> NichtPraemptivR
+    Dynamisch -> PraemptivR
+    NichtPraemptivR -> KeinePrio
+    NichtPraemptivR -> StatPrio 
+    NichtPraemptivR -> DynPrio
+}

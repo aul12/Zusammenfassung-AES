@@ -49,6 +49,33 @@ Ein (Echtzeit-)Betriebssytem ist normalerweise in einem Schichtenmodell aufgebau
     \caption{Beispielhafter Aufbau eines Betriebssytems (Microkernel in \textcolor{blue}{blau}, Makrokernel/Monolithischer Kernel in \textcolor{red}{rot})}
 \end{figure}
 
+\section{Unterbrechungen}
+\todo{Grafik, was auch immer die Aussagt?}
+
+\subsection{Folgen von Unterbrechungen}
+Es gibt nicht unterbrechbare Funktionen (\glqq{}non-reentrant\grqq{}), z.B. (\lstinline[style=c]{tmp} ist hier global):
+\begin{lstlisting}[style=c]
+    void swap(int *x, int *y) {
+        tmp = *x;
+        *x = *y;
+        *y = tmp;
+    }
+\end{lstlisting}
+Mögliche Lösungen:
+\begin{itemize}
+    \item \lstinline[style=c]{tmp} lokal definieren
+    \item Interrupts für Funktion deaktivieren (kritisch)
+    \item \lstinline[style=c]{tmp} schützen
+\end{itemize}
+
+Die meisten Funktionen sind unterbrechbar, z.B.:
+\begin{lstlisting}[style=c]
+    void strcpy(char *dst, const char *src) {
+        while (*dst++ = *src++);
+        *dst = '\0';
+    }
+\end{lstlisting}
+
 \section{Taskverwaltung}
 Ein Task (\glqq{}Rechenprozess\grqq{}) ist ein ablaufendes Programm zusammen mit Variablen und Betriebsmitteln.
 Tasks besitzen:
@@ -63,3 +90,66 @@ Tasks besitzen:
     \includegraphics[width=\textwidth]{taskzustande.pdf}
     \caption{Zustandsmaschine der Taskübergänge}
 \end{figure}
+
+\subsection{Taskscheduler}
+\paragraph{Taskscheduler} Welcher Task soll ausgeführt werden?
+\paragraph{Taskdispatcher} Notwendigen Abläufe um Task zur Ausführung zu bringen
+
+Sobald mehr als ein Task benötigt wird muss ein Scheduler genutzt werden.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{scheduling.pdf}
+    \caption{Übersicht über mögliche Scheduling-Verfahren}
+\end{figure}
+
+\subsubsection{Polled-Loop-Systeme}
+Der einfachst mögliche RT-Kernel:
+\begin{lstlisting}[style=c]
+    int main(void) {
+        while (true) {
+            if (event) {
+                event = false;
+                threadCall(threadPtr);
+            }
+        }
+    }
+\end{lstlisting}
+Nachteile: Nur ein thread kann verwaltet werden, bei Burst-Nachrichten (mehrere Nachrichten während der Thread läuft) wird nur eine abgearbeitet.
+
+\subsubsection{Polled-Loop für mehrere Tasks}
+\begin{lstlisting}[style=c]
+    int main(void) {
+        while (true) {
+            if (event1) {
+                event1 = false;
+                threadCall(thread1Ptr);
+            }
+            if (event2) {
+                event2 = false;
+                threadCall(thread2Ptr);
+            }
+            if (event3) {
+                event3 = false;
+                threadCall(thread3Ptr);
+            }
+        }
+    }
+\end{lstlisting}
+Gleiche Probleme wie oben (Burst). Zusätzlich kann ein Thread alle anderen aushungern.
+
+\subsubsection{Phase-/State-Driven Systems}
+\begin{lstlisting}[style=c]
+    void isr() {
+        eventFlag = 1;
+    }
+
+    int main(void) {
+        switch(eventFlag) {
+            case 1:
+                threadCall(thread1Ptr);
+                break;
+            ...
+        }
+    }
+\end{lstlisting}
+Ebenfalls Probleme bei Bursts, Race-Conditions um \lstinline[style=c]{eventFlag}.

@@ -4,7 +4,7 @@ DOT=dot
 
 all: main.pdf
 
-main.pdf: *.tex structure.pdf ic.pdf taskzustande.pdf
+main.pdf: *.tex structure.pdf ic.pdf taskzustande.pdf scheduling.pdf
 	$(RUBBER) -d main.tex
 
 %.pdf: %.dot
