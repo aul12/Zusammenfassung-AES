@@ -1,0 +1,22 @@
+digraph {
+    eingerichtet [
+        shape=plaintext
+    ]
+    entfernt [
+        shape=plaintext
+    ]
+    ablaufWillig [
+        label="ablauf willig"
+    ]
+
+    eingerichtet -> ruhend
+    ruhend -> entfernt
+    ruhend -> ablaufWillig
+    ablaufWillig -> laufend
+    ablaufWillig -> blockiert
+    laufend -> ablaufWillig
+    laufend -> blockiert
+    blockiert -> ablaufWillig
+    laufend -> ruhend
+    blockiert -> ruhend
+}
