@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   viewBox="-10 -10 552 568"
+   width="46pc"
+   height="568pt"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="Y-diagramm_gajski.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <sodipodi:namedview
+     inkscape:window-height="998"
+     inkscape:window-width="1280"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     showgrid="false"
+     inkscape:zoom="1.1056338"
+     inkscape:cx="341.31362"
+     inkscape:cy="355"
+     inkscape:window-x="1396"
+     inkscape:window-y="-4"
+     inkscape:current-layer="g35" />
+  <metadata
+     id="metadata4">
+    <dc:date>2007-02-24 16:22Z</dc:date>
+<!-- Produced by OmniGraffle Professional 4.1.2 -->    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 355 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="690 : 355 : 1"
+       inkscape:persp3d-origin="345 : 236.66667 : 1"
+       id="perspective171" />
+    <filter
+       id="Shadow"
+       filterUnits="userSpaceOnUse">
+      <feGaussianBlur
+         in="SourceAlpha"
+         result="blur"
+         stdDeviation="1.6764999999999999"
+         id="feGaussianBlur9" />
+      <feOffset
+         in="blur"
+         result="offset"
+         dx="0"
+         dy="4"
+         id="feOffset11" />
+      <feFlood
+         flood-color="Black"
+         flood-opacity=".75"
+         result="flood"
+         id="feFlood13" />
+      <feComposite
+         in="flood"
+         in2="offset"
+         operator="in"
+         id="feComposite15" />
+    </filter>
+    <font-face
+       font-size="12pt"
+       units-per-em="1000"
+       underline-position="-75.683594"
+       underline-thickness="49.316406"
+       slope="-1e3"
+       x-height="500"
+       cap-height="750"
+       ascent="770.01953"
+       descent="-229.98047"
+       font-style="italic"
+       font-weight="500"
+       id="font-face17">
+<!--{
+    NSCTFontCascadeListAttribute = (
+        NSCTFontDescriptor &lt;0x16B195B0&gt; = {
+    NSCTFontTraitsAttribute = {
+        NSCTFontProportionTrait = 0; 
+        NSCTFontSlantTrait = 0; 
+        NSCTFontSymbolicTrait = 0; 
+        NSCTFontWeightTrait = 0; 
+    }; 
+    NSFontNameAttribute = Helvetica; 
+}
+    ); 
+    NSCTFontTraitsAttribute = {NSCTFontSlantTrait = -0.06666667; NSCTFontSymbolicTrait = 1; }; 
+    NSFontNameAttribute = "Helvetica-Oblique"; 
+}-->      <font-face-src
+         id="font-face-src19">
+        <font-face-name
+           name="Helvetica-Oblique"
+           id="font-face-name21" />
+      </font-face-src>
+    </font-face>
+    <font-face
+       font-size="12pt"
+       units-per-em="1000"
+       underline-position="-75.683594"
+       underline-thickness="49.316406"
+       slope="0"
+       x-height="541.6667"
+       cap-height="750"
+       ascent="770.01953"
+       descent="-229.98047"
+       font-weight="bold"
+       id="font-face23">
+<!--{
+    NSCTFontTraitsAttribute = {
+        NSCTFontProportionTrait = 0; 
+        NSCTFontSlantTrait = 0; 
+        NSCTFontSymbolicTrait = 2; 
+        NSCTFontWeightTrait = 0.4; 
+    }; 
+    NSFontNameAttribute = "Helvetica-Bold"; 
+}-->      <font-face-src
+         id="font-face-src25">
+        <font-face-name
+           name="Helvetica-Bold"
+           id="font-face-name27" />
+      </font-face-src>
+    </font-face>
+    <font-face
+       font-size="12pt"
+       units-per-em="1000"
+       underline-position="-75.683594"
+       underline-thickness="49.316406"
+       slope="0"
+       x-height="583.33337"
+       cap-height="750"
+       ascent="770.01953"
+       descent="-229.98047"
+       font-weight="500"
+       id="font-face29">
+<!--{
+    NSCTFontTraitsAttribute = {
+        NSCTFontProportionTrait = 0; 
+        NSCTFontSlantTrait = 0; 
+        NSCTFontSymbolicTrait = 0; 
+        NSCTFontWeightTrait = 0; 
+    }; 
+    NSFontNameAttribute = Helvetica; 
+}-->      <font-face-src
+         id="font-face-src31">
+        <font-face-name
+           name="Helvetica"
+           id="font-face-name33" />
+      </font-face-src>
+    </font-face>
+    <title
+       id="title41">Layer 1</title>
+  </defs>
+  <g
+     stroke="none"
+     stroke-opacity="1"
+     stroke-dasharray="none"
+     fill="none"
+     fill-opacity="1"
+     id="g35">
+    <title
+       id="title37">Canvas 1</title>
+    <circle
+       style="font-size:11.19999981px;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       sodipodi:ry="80.000122"
+       sodipodi:rx="80.000122"
+       sodipodi:cy="237"
+       sodipodi:cx="271"
+       id="circle47"
+       r="80.000122"
+       cy="237"
+       cx="271"
+       transform="translate(1.2207031e-5,1.5258789e-5)" />
+    <circle
+       style="font-size:11.19999981px;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       sodipodi:ry="130.00023"
+       sodipodi:rx="130.00023"
+       sodipodi:cy="236.99997"
+       sodipodi:cx="270.99997"
+       id="circle49"
+       r="130.00023"
+       cy="236.99997"
+       cx="270.99997"
+       transform="translate(4.2724609e-5,4.5776367e-5)" />
+    <path
+       style="font-size:11.19999981px;stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="M 449.00032,237.00001 C 449.00032,335.25618 369.25618,415.00032 271.00001,415.00032 C 172.74384,415.00032 92.999705,335.25618 92.999705,237.00001 C 92.999705,138.74384 172.74384,58.999708 271.00001,58.999708 C 369.25618,58.999708 449.00032,138.74384 449.00032,237.00001 z"
+       id="circle51" />
+    <path
+       style="stroke:#c8c8c8;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;font-size:11.19999999999999900;stroke-opacity:1"
+       id="path53"
+       d="M 430.09885,77.901154 C 517.96722,165.76904 517.96722,308.23096 430.09885,396.09885 C 342.23096,483.96722 199.76904,483.96722 111.90115,396.09885 C 24.032791,308.23096 24.032791,165.76904 111.90115,77.901154 C 199.76904,-9.967209 342.23096,-9.967209 430.09885,77.901154" />
+    <line
+       style="font-size:11.19999981px;stroke:#c8c8c8;stroke-width:0.80738026;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="line58"
+       y2="49.594135"
+       x2="458.40585"
+       y1="215.59544"
+       x1="292.40457" />
+    <line
+       style="font-size:11.19999981px;stroke:#c8c8c8;stroke-width:0.92447305;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="line60"
+       y2="214.81332"
+       x2="248.81332"
+       y1="38.604275"
+       x1="72.604271" />
+    <line
+       style="font-size:11.19999981px;stroke:#c8c8c8;stroke-width:0.99708825;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="line62"
+       y2="515.38367"
+       x2="270.76837"
+       y1="268.60428"
+       x1="270.76837" />
+    <text
+       style="font-size:11.19999981px;fill:#969696;fill-opacity:1;stroke:none;stroke-opacity:1"
+       id="text64"
+       x="236.17326"
+       y="-5.0649748">
+      <tspan
+         style="font-size:11.19999981px;font-style:italic;fill:#969696;fill-opacity:1;stroke:none;stroke-opacity:1"
+         id="tspan66"
+         textLength="73.376"
+         y="5.9350252"
+         x="236.48479"
+         font-style="italic"
+         font-size="12pt">Systemebene</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#969696;fill-opacity:1;stroke:none;stroke-opacity:1"
+       id="text68"
+       y="38.737541"
+       x="216.35355">
+      <tspan
+         style="font-size:11.19999981px;font-style:italic;fill:#969696;fill-opacity:1;stroke:none;stroke-opacity:1"
+         id="tspan70"
+         textLength="116.73"
+         y="49.737537"
+         x="216.48831"
+         font-style="italic"
+         font-size="12pt">Algorithmische Ebene</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#969696;fill-opacity:1;stroke:none;stroke-opacity:1"
+       id="text72"
+       x="208.40218"
+       y="82.676796">
+      <tspan
+         style="font-size:11.19999981px;font-style:italic;fill:#969696;fill-opacity:1;stroke:none;stroke-opacity:1"
+         id="tspan74"
+         textLength="132.052"
+         y="93.676796"
+         x="208.87581"
+         font-style="italic"
+         font-size="12pt">Register-Transfer-Ebene</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#969696;fill-opacity:1;stroke:none;stroke-opacity:1"
+       id="text76"
+       x="241.13733"
+       y="126.47929">
+      <tspan
+         style="font-size:11.19999981px;font-style:italic;fill:#969696;fill-opacity:1;stroke:none;stroke-opacity:1"
+         id="tspan78"
+         textLength="62.056"
+         y="137.47929"
+         x="241.60901"
+         font-style="italic"
+         font-size="12pt">Logikebene</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#969696;fill-opacity:1;stroke:none;stroke-opacity:1"
+       id="text80"
+       x="227.28499"
+       y="171.52867">
+      <tspan
+         style="font-size:11.19999981px;font-style:italic;fill:#969696;fill-opacity:1;stroke:none;stroke-opacity:1"
+         id="tspan82"
+         textLength="92.056"
+         y="182.52867"
+         x="227.75667"
+         font-style="italic"
+         font-size="12pt">Schaltkreisebene</tspan>
+    </text>
+    <text
+       style="font-size:16px;fill:#969696;fill-opacity:1"
+       id="text84"
+       x="15.466401"
+       y="29.162714">Verhalten</text>
+    <text
+       style="font-size:11.19999981px;fill:#969696;fill-opacity:1"
+       id="text90"
+       x="454.168"
+       y="19.688105">
+      <tspan
+         style="font-size:20px;font-weight:bold;fill:#969696;fill-opacity:1"
+         id="tspan92"
+         textLength="46.669"
+         y="30.688105"
+         x="454.33304"
+         font-weight="bold"
+         font-size="12pt">Struktur</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#969696;fill-opacity:1"
+       id="text94"
+       x="223.61507"
+       y="529.65863">
+      <tspan
+         style="font-size:20px;font-weight:bold;fill:#969696;fill-opacity:1"
+         id="tspan96"
+         textLength="59.355"
+         y="540.65863"
+         x="223.93733"
+         font-weight="bold"
+         font-size="12pt">Geometrie</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text98"
+       x="-79.533112"
+       y="114.17754"
+       transform="matrix(0.7071068,-0.7071068,0.7071068,0.7071068,0,0)">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan100"
+         textLength="74.021004"
+         y="125.17754"
+         x="-79.054596"
+         font-size="12pt">Systemspezifikation</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text104"
+       x="-40.969395"
+       y="164.1776"
+       transform="matrix(0.7071068,-0.7071068,0.7071068,0.7071068,0,0)">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan106"
+         textLength="64.031"
+         y="175.1776"
+         x="-40.48502"
+         font-size="12pt">Algorithmen</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text108"
+       x="-73.439407"
+       y="221.25795"
+       transform="matrix(0.7071068,-0.7071068,0.7071068,0.7071068,0,0)">Register-Transfers</text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text114"
+       x="-92.504936"
+       y="262.0148"
+       transform="matrix(0.7071068,-0.7071068,0.7071068,0.7071068,0,0)">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan116"
+         textLength="120.082"
+         y="273.0148"
+         x="-92.045952"
+         font-size="12pt">Boolsche Gleichungen</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text118"
+       x="-95.489441"
+       y="310.6441"
+       transform="matrix(0.7071068,-0.7071068,0.7071068,0.7071068,0,0)">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan120"
+         textLength="14.666"
+         y="321.6441"
+         x="-95.424011"
+         font-size="12pt">Dif</tspan>
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan122"
+         textLength="107.414"
+         y="321.6441"
+         x="-80.968933"
+         font-size="12pt">ferentialgleichungen</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text124"
+       x="299.77939"
+       y="208.8056">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan126"
+         textLength="7.33"
+         y="219.8056"
+         x="299.79404"
+         font-size="12pt">T</tspan>
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan128"
+         textLength="146.08"
+         y="219.8056"
+         x="306.68466"
+         font-size="12pt">ransistoren, Leitungsstücke</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text130"
+       x="335.24844"
+       y="172.51765">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan132"
+         textLength="33.345001"
+         y="183.51765"
+         x="335.53555"
+         font-size="12pt">Gatter, Flipflops, Leitungen</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text138"
+       x="369.72388"
+       y="136.19682">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan140"
+         textLength="98.741997"
+         y="147.19682"
+         x="369.85278"
+         font-size="12pt">Module, Leitungen</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text142"
+       x="404.38635"
+       y="103.46107">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan144"
+         textLength="106.047997"
+         y="114.46107"
+         x="404.86194"
+         font-size="12pt">Subsysteme, Busse</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text146"
+       x="438.64914"
+       y="69.343796">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan148"
+         textLength="85.365"
+         y="80.343811"
+         x="438.96652"
+         font-size="12pt">CPUs, Speicher</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text150"
+       x="273.01477"
+       y="461.78122">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan152"
+         textLength="77.378"
+         y="472.78122"
+         x="273.32532"
+         font-size="12pt">Partitionierung</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text154"
+       x="273.13644"
+       y="415.76147">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan156"
+         textLength="38.009"
+         y="426.76151"
+         x="273.63156"
+         font-size="12pt">Cluster</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text158"
+       x="272.7843"
+       y="367.46506">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan160"
+         textLength="50.027"
+         y="378.46506"
+         x="273.27063"
+         font-size="12pt">Floorplan</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text162"
+       x="273.80695"
+       y="317.21121">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan164"
+         textLength="32.682999"
+         y="328.21121"
+         x="273.96515"
+         font-size="12pt">Zellen</tspan>
+    </text>
+    <text
+       style="font-size:11.19999981px;fill:#000000"
+       id="text166"
+       x="273.22043"
+       y="266.88">
+      <tspan
+         style="font-size:11.19999981px"
+         id="tspan168"
+         textLength="98.724"
+         y="277.88"
+         x="273.35812"
+         font-size="12pt">Masken, Polygone</tspan>
+    </text>
+    <path
+       sodipodi:type="arc"
+       style="fill:none;fill-opacity:1;stroke:#c8c8c8;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3535"
+       sodipodi:cx="269.29681"
+       sodipodi:cy="227.32994"
+       sodipodi:rx="30.389809"
+       sodipodi:ry="30.389809"
+       d="M 299.68662,227.32994 A 30.389809,30.389809 0 1 1 238.90701,227.32994 A 30.389809,30.389809 0 1 1 299.68662,227.32994 z"
+       transform="translate(1.4715673,10.393641)" />
+  </g>
+</svg>

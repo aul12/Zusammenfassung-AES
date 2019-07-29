@@ -182,23 +182,22 @@ State-Machine.
 \end{figure}
 
 \section{Beispiel: Aufbau eines Schnurlosen DECT-Telefons}
-\todo{Grafik}
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
-        \filldraw [draw=black,fill=white] (5,0) rectangle (3,2) 
+        \filldraw [draw=black,fill=gray!10] (5,0) rectangle (3,2) 
             node[below right,max width=2cm] {\textbf{ASP}\\(Codierung)};
-        \filldraw [draw=black,fill=white] (8,0) rectangle (6,2)
+        \filldraw [draw=black,fill=gray!10] (8,0) rectangle (6,2)
             node[below right,max width=2cm] {Dualband\\RAM};
-        \filldraw [draw=black,fill=white] (5,3) rectangle (3,5)
+        \filldraw [draw=black,fill=gray!10] (5,3) rectangle (3,5)
             node[below right,max width=2cm] {\textbf{ISP}\\HMI\\Protokolle};
-        \filldraw [draw=black,fill=white] (8,3) rectangle (6,5)
+        \filldraw [draw=black,fill=gray!10] (8,3) rectangle (6,5)
             node[below right,max width=2cm] {\textbf{ASP}\\Burstmode-Logic};
-        \filldraw [draw=black,fill=white] (11,3) rectangle (9,5)
+        \filldraw [draw=black,fill=gray!10] (11,3) rectangle (9,5)
             node[below right,max width=2cm] {Radio};
-        \filldraw [draw=black,fill=white] (2,5) rectangle (1,3)
+        \filldraw [draw=black,fill=gray!10] (2,5) rectangle (1,3)
             node[below right,max width=2cm,rotate=90] {Speicher};
-        \filldraw [draw=black,fill=white] (2,2) rectangle (1,0)
+        \filldraw [draw=black,fill=gray!10] (2,2) rectangle (1,0)
             node[below right,max width=2cm,rotate=90] {Lautsprecher\\Mikrofon};
         \draw (11,4) to[short] (12,4) node[antenna]{};
         \draw [<->] (2,1) -- (3,1);
@@ -215,7 +214,27 @@ Oftmals wird ein ISP mit zugehöriger RF-Hardware auf einem Chip-Integriert (z.B
 
 \section{Wie kommunizieren PEs in heterogenen Systemen?}
 \subsection{Gemeinsame Ressourcen (Speicherkopplung)}
-\todo{Grafik}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \filldraw [draw=black,fill=gray!10] (2,0) rectangle (0,2) 
+            node[below right,max width=2cm] {Arbiter};
+        \filldraw [draw=black,fill=gray!10] (7,0) rectangle (5,2)
+            node[below right,max width=2cm] {Speicher};
+        \filldraw [draw=black,fill=gray!10] (2,3) rectangle (0,5)
+            node[below right,max width=2cm] {ISP};
+        \filldraw [draw=black,fill=gray!10] (7,3) rectangle (5,5)
+            node[below right,max width=2cm] {ISP};
+        \filldraw [draw=black, fill=gray!10]
+            (3,0) -- (3,5) -- (3.5,6) -- (4,5) -- (4,0) -- (3.5,-1) -- cycle;
+        \draw (3.5,2.5) node[rotate=90] (){Bus};
+        \draw [<->] (2,1) -- (3,1);
+        \draw [<->] (2,4) -- (3,4);
+        \draw [<->] (4,1) -- (5,1);
+        \draw [<->] (4,4) -- (5,4);
+    \end{tikzpicture}
+    \caption{Beispielhafter Aufbau eines Systems mit Speicherkopplung}
+\end{figure}
 Alle PEs können über einen Bus auf eine gemeinsame Ressource (für gewöhnlich Speicher) zugreifen. 
 Für die Synchronisation ist ein \glqq{}Arbiter\grqq{} (Richter) sowie ein Bus-Controller in jedem PE notwendig.
 
@@ -227,4 +246,39 @@ Bei $n$ PEs sind im Worstcase $\frac{(n-1)\cdot n}{2} \in  \mathcal{O}(n^2)$ Ver
 \subsection{Tiled-Architecture}
 Bei einer Tiled-Architecture oder Network-on-a-Chip (NOC) werden jeweils wenige PEs über eine gemeinsame Resource verbunden. 
 Diese Gruppen an PEs werden dann über ein Gitter aus Leitungen verbunden.
-\todo{Grafik}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        \filldraw [draw=black,fill=gray!10] (-0.5,-1) rectangle (4,3.5);
+        \filldraw [draw=black,fill=gray!10] (-0.5,5.5) rectangle (4,10);
+        \filldraw [draw=black,fill=gray!10] (6,5.5) rectangle (10.5,10);
+        \filldraw [draw=black,fill=gray!10] (6,-1) rectangle (10.5,3.5);
+        \filldraw [draw=black,fill=gray!40] (1,0) rectangle (0,1);
+        \filldraw [draw=black,fill=gray!40] (3.5,0) rectangle (2.5,1);
+        \filldraw [draw=black,fill=gray!40] (1,1.5) rectangle (0,2.5);
+        \filldraw [draw=black,fill=gray!40] (3.5,1.5) rectangle (2.5,2.5);
+        \filldraw [draw=black,fill=gray!40]
+            (1.5,0) -- (1.5,2.5) -- (1.75,3) -- (2,2.5) -- (2,0) -- (1.75,-0.5) -- cycle;
+        \draw [<->] (1,0.5) -- (1.5,0.5);
+        \draw [<->] (1,2) -- (1.5,2);
+        \draw [<->] (2,0.5) -- (2.5,0.5);
+        \draw [<->] (2,2) -- (2.5,2);
+        \draw (5,-3) -- (5,12);
+        \draw (-1.5,-3) -- (-1.5,12);
+        \draw (11.5,-3) -- (11.5,12);
+        \draw (-2.5,-2) -- (12.5,-2);
+        \draw (-2.5,4.5) -- (12.5,4.5);
+        \draw (-2.5,11) -- (12.5,11);
+        \foreach \x in {-1.5,5,11.5}{
+            \foreach \y in {-2,4.5,11}{
+                \draw (\x,\y) circle (0.1cm);
+            }
+        }
+        \foreach \x in {-1.5,5}{
+            \foreach \y in {-2,4.5}{
+                \draw (\x,\y) -- (\x+1,\y+1);
+            }
+        }
+    \end{tikzpicture}
+    \caption{Beispielhafter Aufbau eines Systems mit Tiled-Architecture}
+\end{figure}
