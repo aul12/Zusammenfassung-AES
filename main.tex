@@ -23,6 +23,7 @@
 \usepackage{listings}
 \usepackage{subcaption}
 \usepackage{circuitikz}
+\usepackage{varwidth}
 
 \lstdefinelanguage{VHDL}{
    morekeywords={
@@ -51,6 +52,13 @@
 }
 
 \usetikzlibrary{calc,shapes.multipart,chains,arrows}
+
+\tikzset{
+    max width/.style args={#1}{
+        execute at begin node={\begin{varwidth}{#1}},
+        execute at end node={\end{varwidth}}
+    }
+}
 
 \setlength\parindent{0pt}
 
