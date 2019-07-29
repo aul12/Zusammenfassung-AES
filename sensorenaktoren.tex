@@ -26,7 +26,21 @@ Es gibt Analoge Sensoren (z.B. Entfernung), sowie digital Sensoren (z.B. Lichtsc
 \paragraph{Messen} 
 Ein experimenteller Vorgang, durch den eine physikalische Größe als Vielfaches einer Einheit oder eines Bezugswertes ermittelt wird.
 
-\todo{Mehr im Moodle}
+\paragraph{Messgröße}
+Die Messgröße ist die physikalische Größe, deren Wert durch die Messung ermittelt werden soll.
+
+\paragraph{Messergebnis}
+Das Messergebnis ist ein aus mehreren Messwerten einer physikalische Größe oder aus Messwerten für verschiedene Größen festgelegten Beziehung ermittelter Wert oder Werteverlauf.
+Aber auch ein einzelner Messwert kann bereits ein Messergebis darstellen.
+
+\paragraph{Messprinzip}
+Messprinzip heißt die charakteristische physikalische Erscheinung, die bei der Messung benutzt wird.
+
+\paragraph{Messverfahren}
+Messverfahren heißt die spezielle Anwendung des Messprinzips.
+
+\paragraph{Messsignale}
+Messsignale stellen Messgrößen im Signalflussweg einer Messeinrichtung durch zugeordnete physikalische Größen gleicher oder anderer Art dar.
 
 \paragraph{Messumformer} 
 Ein analoges Eingangssignal wird in ein eindeutig damit zusammenhängendes analoges Außgangssignal unter der Aufbringung von Energie umgeformt (Verstärker).
@@ -116,6 +130,32 @@ Sägezahnspannung kleiner als die Eingangsspannung ist, die anliegende Spannung 
 \begin{equation*}
     \Delta t = \frac{U_a}{U_0} \cdot t_i
 \end{equation*}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw (4,2) node[op amp,yscale=-1] (k1){};
+        \draw (4,6) node[op amp,yscale=-1] (k2){};
+        \filldraw [draw=black,fill=white] (2,3.5) rectangle (0,4.5) 
+            node[below right,max width=2cm] {Sägezahn-generator};
+        \filldraw [draw=black,fill=white] (5,0) rectangle (3,0.5) 
+            node[below right,max width=2cm] {f-Generator};
+        \filldraw [draw=black,fill=white] (8,4) rectangle (7,5);
+        \draw (7,5) node[below right,max width=2cm] {\Huge{\&}};
+        \draw (1,6.5) node (Ua) {$U_a$};
+        \draw (1.5,6.5) |- (k2.+);
+        \draw (2,4) to[short,-*] (2.5,4);
+        \draw (2.5,4) |- (k2.-);
+        \draw (2.5,4) |- (k1.+);
+        \draw (k1.-) -| (2.5,0) node[rground]{};
+        \draw (1,4.5) |- (7,4.6);
+        \draw (k2.out) |- (7,4.9);
+        \draw (k1.out) |- (7,4.4);
+        \draw (5,0.25) -| (6.5,1);
+        \draw (6.5,1) |- (7,4.1);
+        \draw (8,4.5) -- (9,4.5) node[right] (){$C$};
+    \end{tikzpicture}
+    \caption{Aufbau eines Sägezahnumsetzer}
+\end{figure}
 \todo{Blockschaltbild}
 \todo{Timing}
 Probleme: Steigung muss möglichst genau sein, d.h. der Sägezahngenerator muss möglichst genau sein.

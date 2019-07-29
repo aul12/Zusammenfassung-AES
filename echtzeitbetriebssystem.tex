@@ -114,7 +114,7 @@ Der einfachst mögliche RT-Kernel:
         }
     }
 \end{lstlisting}
-Nachteile: Nur ein thread kann verwaltet werden, bei Burst-Nachrichten (mehrere Nachrichten während der Thread läuft) wird nur eine abgearbeitet.
+Nachteile: Nur ein thread kann verwaltet werden, bei Burst-Nachrichten (mehrere Nachrichten während der Thread läuft) wird nur eine abgearbeitet, Verschwendung von CPU-Zeit.
 
 \subsubsection{Polled-Loop für mehrere Tasks}
 \begin{lstlisting}[style=c]

@@ -1,7 +1,11 @@
 \chapter{Einführung}
-Ein eingettetes System ist in einen technischen Kontext oder Prozess eingebettet.
+\begin{itemize}
+    \item Ein eingettetes System ist ein Rechner, der in einem technischen Kontext oder Prozess eingebettet ist.
+    \item Im wesentlichen kann ein eingebettetes System als einen Computer, der einen technischen Prozess steuert oder regelt, betrachtet werden.
+    \item Architektur eingebetteter Systeme betrachtet Komponenten eines Eingebetteten Systems und
+deren Zusammenspiel.
+\end{itemize}
 
-Im wesentlichen kann ein eingebettetes System als einen Computer, der einen technischen Prozess steuert oder regelt, betrachtet werden.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -23,6 +27,7 @@ Im wesentlichen kann ein eingebettetes System als einen Computer, der einen tech
 \begin{itemize}
     \item Enge Verzahnung zwischen Hard- und Software
     \item Strenge funktionale und zeitliche Randbedinungen
+    \item Hardware muss Kostengünstig sein
     \item Zusätzlich zum Prozessor wird I/O Hard- und Software benötigt
     \item Oftmals wird Anwendungsspezifische Hardware benötigt
 \end{itemize}
@@ -56,6 +61,21 @@ Die Entwicklung eines eingebetteten Systems ist kein reines Software-Problem, zu
 $\Rightarrow$ Aufteilung des Entwurfs auf mehrer Entwurfsebene
 
 \subsection{Entwurfsebenen}
+\begin{itemize}
+    \item Systemebene: Regelung, Auswahl \& Verschaltung von Komponenten, Verschaltung von Algorithmen
+    \item Algorithmische Ebene: Programme, Algorithmen
+    \item Register-Transfer-Ebene: Verschaltung von Operationen und Speicher
+    \item Logikebene: Boolsche Gleichungen, Logische Schaltungen
+    \item Transistorebene: Verschaltung von Transistoren zu logischen Gattern
+    \item Netzwerkebene: Elektronische Ersatzschaltbilder aus idealen Netzwerkelementen
+    \item Layoutebene: Entwurf als Chiplayout
+    \item \ldots
+    \item Maxwellsche Gleichungen
+\end{itemize}
+
+\subsection{Syntheseschritte}
+Unter Synthese wird die Entwicklung eines technischen Systems bezeichnet.
+Es wird aus vorgegebenen Eigenschaften und Verhalten, ein System entwickelt, welches diese Bedingungen einhält.
 \begin{table}[H]
     \centering
     \begin{tabular}{p{.25\textwidth}p{.25\textwidth}p{.25\textwidth}p{.25\textwidth}}
@@ -287,9 +307,9 @@ Dafür wird zwischen zwei Arten unterschieden:
 \end{itemize}
 Beispiel (Inverter):
 \begin{lstlisting}[style=vhdl]
-    out <= reject 10 ns inertial not in after 30ns;
+    o <= reject 10 ns inertial not i after 30ns;
 \end{lstlisting}
-Die Verzögerungen werden in VHDL durch \lstinline[style=vhdl]{reject} für langsames Ansprechverhalten (hier muss der Puls mindestens 10ns dauern) 
+Die Verzögerungen werden in VHDL durch \lstinline[style=vhdl]{reject inertial} für langsames Ansprechverhalten (hier muss der Puls mindestens 10ns dauern) 
 und \lstinline[style=vhdl]{after} für Verzögerungen (hier 30ns) modelliert.
 
 Für reine Laufzeitverzögerungen kann in VHDL auch \lstinline[style=vhdl]{transport} genutzt werden, folgende Befehle sind äquivalent:
