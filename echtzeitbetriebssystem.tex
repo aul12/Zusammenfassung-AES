@@ -144,11 +144,13 @@ Gleiche Probleme wie oben (Burst). Zusätzlich kann ein Thread alle anderen aush
     }
 
     int main(void) {
-        switch(eventFlag) {
-            case 1:
-                threadCall(thread1Ptr);
-                break;
-            ...
+        while(true) {
+            switch(eventFlag) {
+                case 1:
+                    threadCall(thread1Ptr);
+                    break;
+                ...
+            }
         }
     }
 \end{lstlisting}
